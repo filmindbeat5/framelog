@@ -26,6 +26,9 @@ logger.log(job_id="job_8821", frame=142, status="completed", duration=4.37)
 failures = logger.query(status="failed", limit=10)
 for entry in failures:
     print(entry)
+
+# Export logs for a specific job to a file
+logger.export(job_id="job_8821", output_path="/tmp/job_8821_report.json")
 ```
 
 **Example output:**
@@ -45,6 +48,7 @@ framelog writes structured logs in JSON format by default, making them easy to i
 - Thread-safe logging across multiple render nodes
 - Supports JSON and plaintext output formats
 - Simple query interface for filtering by job, frame, or status
+- Export logs for a specific job or time range to a file
 
 ---
 
